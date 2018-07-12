@@ -11,7 +11,7 @@ senha varchar(30) NOT NULL,
 primary key (id)
 )DEFAULT CHARSET = UTF8;
 
-insert into usuarios values (DEFAULT, 'andré', 'cs300370', '123');
+insert into usuarios values (DEFAULT, 'andré', 'cs300370', '202cb962ac59075b964b07152d234b70');
 select * from usuarios;
 drop table videoconferencias;
 
