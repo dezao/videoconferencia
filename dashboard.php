@@ -1,6 +1,11 @@
 <?php
+
+//Cabeçalho
+include_once './view/topo.php';
+
 //Conexão com o Banco de Dados
 require_once 'dbconnect.php';
+
     
 //Sessão
 session_start();
@@ -18,20 +23,51 @@ $dados = mysqli_fetch_array($resultado);
 mysqli_close($connect);
 
 ?>
+        <div class="row">
+            <div class="col s12 m12">
+                <h3 class="light">Videoconferências</h3>
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Ticket</th>
+                            <th>Hora Inicial</th>
+                            <th>Hora Final</th>
+                            <th>Participantes</th>
+                            <th>Unidades</th>
+                            <th>Salas Físicas</th>
+                            <th>PIN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>2078737</td>
+                            <td>28/09/2018 13:00</td>
+                            <td>28/09/2018 14:00</td>
+                            <td>Julio Fontana</td>
+                            <td>Curitiba e JK</td>
+                            <td>Conselho e Sala 2</td>
+                            <td>77889900</td>
+                            <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+                            <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <a href="cadastrar.php" class="btn">Adicionar Vídeo</a>  
+            </div>
+        </div>
 
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sistema de Videoconferência</title>
-</head>
-<body>
-    <center>
+  <!--   <center>
         <h1>Olá, <?php echo $dados['nome']; ?>!</h1>
         <a href="logout.php">Sair</a>
     </center>
-</body>
-</html>
+ -->
+<?php
+
+    //Rodapé
+    include_once './view/rodape.php';
+
+?>

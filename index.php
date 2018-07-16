@@ -12,7 +12,9 @@
         $senha = mysqli_escape_string($connect, $_POST['senha']);
 
         if(empty($login) || empty($senha)){      
-            $erros[] = '<li>O campo login/senha precisa ser preenchido!</li>'; 
+           
+                $erros[] = '<div align="center" class="card-panel red lighten-4 red-text text-darken-4">O campo login/senha precisam ser preenchidos!</div><br>'; 
+
         }else {
             $sql = "SELECT login FROM usuarios WHERE login = '$login'";
             $resultado = mysqli_query($connect, $sql);
@@ -29,10 +31,10 @@
                         $_SESSION['id_usuario'] = $dados['id'];
                         header('Location: dashboard.php');
                     } else {
-                        $erros[] = '<li>Usuário e senha não conferem</li>';
+                        $erros[] = '<div align="center" class="card-panel red lighten-4 red-text text-darken-4">Usuário e senha não conferem, verifique!</div><br>';
                     }
             }else {
-               $erros[] = '<li>Usuário inexistente</li>';
+               $erros[] = '<div align="center" class="card-panel red lighten-4 red-text text-darken-4">Usuário inexistente!</div><br>';
             }
         }
     }
@@ -50,27 +52,35 @@
     <link rel="stylesheet" href="css/materialize.min.css">
     <!--Custom CSS-->
     <link rel="stylesheet" href="css/custom.css">
-    <title>Agendamento de Video Conferência</title>
+    <title>Agendamento de Videoconferência</title>
 </head>
 <body>
 
     <div class="container">
         <div class="row">
-            <h1 >Sistema de Video Conferência</h1>
-           
-            <?php
-                if(!empty($erros)){
-                    foreach($erros as $erro){
-                        echo $erro;
+        <h4 align='center'>Sistema de Videoconferência</h4>
+            <div class="input-field col s6 offset-s3">
+                <?php
+                    if(!empty($erros)){
+                        foreach($erros as $erro){
+                            echo $erro;
+                        }
                     }
-                }
-            ?>
-           
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-            Login: <input type="text" name="login" id=""><br>
-            Senha: <input type="password" name="senha" id=""><br>
-            <input type="submit"  name="btnLogar" value="Login">
-            </form>
+                ?>
+            
+                <form class="col s12 m12" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                
+                <label for="login">Login</label>
+                <input type="text" name="login" id="login"  class="validate" placeholder="Seu CS"><br>
+                <label for="senha">Senha</label>
+                <input type="password" name="senha" id="senha" class="validate" placeholder="Sua Senha"><br>
+                <br>
+                <button class="btn waves-effect waves-light btn-large #880e4f pink darken-4" type="submit" name="btnLogar">Logar
+                    <i class="material-icons right">send</i>
+                </button>
+
+                </form>
+            </div>
         </div>
 
     </div>
@@ -80,6 +90,8 @@
     <!--Materialize JS-->
     <script src="js/materialize.min.js"></script>
     <!--Custom JavaScript-->
-    <script srand="js/custom.js"> </script>
+    <script src="js/custom.js"> </script>
+    <!--Sweet Alert-->
+    <script src="js/sweetalert.min.js"></script>
 </body>
 </html>
