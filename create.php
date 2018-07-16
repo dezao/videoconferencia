@@ -6,6 +6,11 @@
     //Sessão
     session_start();
 
+    //Verificação 
+    if(!isset($_SESSION['logado'])) {
+        header('Location: index.php');
+    }
+
     if(isset($_POST['btnCadastrar'])) {
 
         $ticket = mysqli_escape_string($connect, $_POST['ticket']);
