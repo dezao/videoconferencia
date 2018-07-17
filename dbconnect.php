@@ -7,6 +7,7 @@
     $banco = 'videoconferencia';
 
     $connect = mysqli_connect($servidor, $usuario, $senha, $banco);
+    mysqli_set_charset($connect, "utf8");
 
     if(mysqli_connect_error()){
         echo "Falha na conexão ".mysqli_connect_error();

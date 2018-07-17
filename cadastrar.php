@@ -16,12 +16,12 @@ include_once './view/topo.php';
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="date" name="inicio" id="inicio">
+                        <input type="time" name="inicio" id="inicio">
                         <label for="inicio">Início</label>
                     </div>
 
                     <div class="input-field col s12">
-                        <input type="date" name="fim" id="fim">
+                        <input type="time" name="fim" id="fim">
                         <label for="fim">Fim</label>
                     </div>
 
