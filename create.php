@@ -21,11 +21,16 @@
         $salasFisicas = mysqli_escape_string($connect, $_POST['salasFisicas']);
         $pin = mysqli_escape_string($connect, $_POST['pin']);
 
-        $sql = "INSERT INTO videoconferencias (ticket, dataEHoraInicio,	dataEHoraFim, nomeParticipantes, unidadesParticipantes, salasFisicas, pin) VALUES ('$ticket', '$inicio', '$fim', '$participantes', '$unidades', '$salasFisicas', '$pin')";
+        $sql = "INSERT INTO videoconferencias (ticket, horaInicio,	horaFim, nomeParticipantes, unidadesParticipantes, salasFisicas, pin) VALUES ('$ticket', '$inicio', '$fim', '$participantes', '$unidades', '$salasFisicas', '$pin')";
 
         if(mysqli_query($connect, $sql)) {
-            header('Location: dashboard.php?sucesso');
+            //$_SESSION['mensagem'] ='<div align="center" class="card-panel green lighten-4 green-text text-darken-4">Videoconferência cadastrada com Sucesso!!</div>';
+            $_SESSION['mensagem'] = 'Videoconferência cadastrada com Suceso!';
+            header('Location: dashboard.php');
         } else {
-            header('Location: dashboard.php?erro');
+            $_SESSION['mensagem'] = '<div align="center" class="card-panel red lighten-4 red-text text-darken-4">Erro ao cadastar a Videoconferência, tente novamente!</div><br>';
+            header('Location: dashboard.php');
         }
     }
+
+    include_once './view/rodape.php';
