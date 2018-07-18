@@ -5,27 +5,18 @@
 
     include_once './view/mensagem.php';
 
-    //Dados
-    $id = $_SESSION['id_usuario'];
-    $sql = "SELECT * FROM usuarios WHERE id = '$id'";
-    $resultado = mysqli_query($connect, $sql);
-    $dados = mysqli_fetch_array($resultado);
-
-/*     if (isset($_SESSION['mensagem'])) { 
-            echo $_SESSION['mensagem'];
-    } */
-
 ?>
 
         <div class="row">
             <div class="col s12 m12">
-                <h3 class="light">Videoconferências</h3>
-                <a href="cadastrar.php" class="btn">Cadastrar nova Videoconferência</a> 
-                <table class="striped">
+                <h3 class="light center-align">DASHBOARD VIDEOCONFERÊNCIAS</h3>
+                <hr> 
+                <table class="striped responsive-table">
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th hidden>ID</th>
                             <th>Ticket</th>
+                            <th>Data</th>
                             <th>Hora Inicial</th>
                             <th>Hora Final</th>
                             <th>Participantes</th>
@@ -38,7 +29,7 @@
                         <?php
                             include_once 'dbconnect.php';
 
-                            $sqlVideo = "SELECT * FROM videoconferencias"; 
+                            $sqlVideo = "SELECT * FROM videoconferencias ORDER BY dia, horaInicio"; 
                             $resultadoVideo = mysqli_query($connect, $sqlVideo);
                             mysqli_close($connect);
 
@@ -46,15 +37,19 @@
 
                         ?>
                         <tr>
-                            <td><?php echo $dadosVideo['id']; ?></td>
+                            <td hidden ><?php echo $dadosVideo['id']; ?></td>
                             <td><?php echo $dadosVideo['ticket']; ?></td>
+                                <?php $dia = $dadosVideo['dia']; 
+                                    $dia = date('d/m/Y', strtotime($dia));
+                                ?>
+                            <td><?php echo $dia ?></td>
                             <td><?php echo $dadosVideo['horaInicio']; ?></td>
                             <td><?php echo $dadosVideo['horaFim']; ?></td>
                             <td><?php echo $dadosVideo['nomeParticipantes']; ?></td>
                             <td><?php echo $dadosVideo['unidadesParticipantes']; ?></td>
                             <td><?php echo $dadosVideo['salasFisicas']; ?></td>
                             <td><b><?php echo $dadosVideo['pin']; ?></b></td>
-                            <td><a href="" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
+                            <td><a href="editaVideo.php?id=<?php echo $dadosVideo['id']; ?>" class="btn-floating orange"><i class="material-icons">edit</i></a></td>
                             <td><a href="" class="btn-floating red"><i class="material-icons">delete</i></a></td>
                         </tr>
                         <?php }  ?>
@@ -67,8 +62,7 @@
 
 
     <center>
-        <h1>Olá, <?php echo $dados['nome']; ?>!</h1>
-        <a href="logout.php">Sair</a>
+        
     </center>
 
 

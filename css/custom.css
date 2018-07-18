@@ -1,8 +1,1 @@
-.icon_style {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    font-size: 30px;
-    color: white;
-    cursor:pointer; 
-}
+img { border-style: none; padding: 10px; }

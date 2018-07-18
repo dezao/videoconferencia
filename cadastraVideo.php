@@ -4,17 +4,21 @@
 include_once './view/topo.php';
 
 ?>
+<h3 class="light center-align">CADASTRO DE VIDEOCONFERÊNCIA</h3>
+<hr>
     <div class="container">
         <div class="row">
             <div class="col s12 m12">
-                <h3 class="light">Nova Videoconferência</h3>
                 <form action="create.php" method="POST">
                    
                     <div class="input-field col s12">
                         <input type="number" name="ticket" id="ticket">
                         <label for="ticket">Ticket</label>
                     </div>
-
+                    <div class="input-field col s12">
+                        <input type="date" name="dia" id="dia">
+                        <label for="dia">Dia</label>
+                    </div>
                     <div class="input-field col s12">
                         <input type="time" name="inicio" id="inicio">
                         <label for="inicio">Início</label>
