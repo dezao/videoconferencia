@@ -13,7 +13,7 @@
 
         if(empty($login) || empty($senha)){      
            
-                $erros[] = '<div align="center" class="card-panel red lighten-4 red-text text-darken-4">O campo login/senha precisam ser preenchidos!</div><br>'; 
+                $erros[] = '<div align="center" id="erroLogin" class="card-panel red lighten-4 red-text text-darken-4">O campo login/senha precisam ser preenchidos!</div><br>'; 
 
         }else {
             $sql = "SELECT login FROM usuarios WHERE login = '$login'";
@@ -31,13 +31,15 @@
                         $_SESSION['id_usuario'] = $dados['id'];
                         header('Location: dashboard.php');
                     } else {
-                        $erros[] = '<div align="center" class="card-panel red lighten-4 red-text text-darken-4">Usuário e senha não conferem, verifique!</div><br>';
+                        $erros[] = '<div align="center" id="erroLogin" class="card-panel red lighten-4 red-text text-darken-4">Usuário e senha não conferem, verifique!</div><br>';
                     }
             }else {
-               $erros[] = '<div align="center" class="card-panel red lighten-4 red-text text-darken-4">Usuário inexistente!</div><br>';
-            }
+               $erros[] = '<div align="center" id="erroLogin" class="card-panel red lighten-4 red-text text-darken-4">Usuário inexistente!</div><br>';
+            } 
         }
     }
+
+    
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +60,7 @@
 
     <div class="container">
         <div class="row">
-        <h4 align='center'>Sistema de Videoconferência</h4>
+        <h4 class="light center-align">Sistema de Videoconferência</h4>
             <div class="input-field col s6 offset-s3">
                 <?php
                     if(!empty($erros)){
@@ -67,31 +69,34 @@
                         }
                     }
                 ?>
-            
-                <form class="col s12 m12" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-                
-                <label for="login">Login</label>
-                <input type="text" name="login" id="login"  class="validate" placeholder="Seu CS"><br>
-                <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" class="validate" placeholder="Sua Senha"><br>
-                <br>
-                <button class="btn waves-effect waves-light btn-large #880e4f pink darken-4" type="submit" name="btnLogar">Logar
-                    <i class="material-icons right">send</i>
-                </button>
-
-                </form>
+                        <div class="col s12 m12">
+                            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                            
+                                <div class="input-field col s12">
+                                    <input type="text" name="login" id="login" required>
+                                    <label for="login">Login</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <input type="password" name="senha" id="senha" required>
+                                    <label for="senha">Senha</label>
+                                </div>
+                                <br>
+                        </div>  
+                                <div class="col S6 offset-s3">     
+                                    <button align="center" class="btn waves-effect waves-light btn-large #880e4f pink darken-4" type="submit" name="btnLogar">Logar
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                </div> 
+                            </form>     
             </div>
         </div>
-
     </div>
 
-    <!--JQuery-->
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <!--Materialize JS-->
-    <script src="js/materialize.min.js"></script>
-    <!--Custom JavaScript-->
-    <script src="js/custom.js"> </script>
-    <!--Sweet Alert-->
-    <script src="js/sweetalert.min.js"></script>
-</body>
-</html>
+    <script type="text/javascript">
+        setTimeout(function() {
+        $('#erroLogin').fadeOut('fast');
+        }, 2000);
+	</script>
+
+<?php
+    include_once './view/rodape.php';

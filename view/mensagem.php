@@ -11,7 +11,7 @@
         
     <?php
         }
-        //session_unset($_SESSION['mensagem']);
+        unset($_SESSION['mensagem']);
         //session_destroy('mensagem');
         //session_unregister();
     ?>

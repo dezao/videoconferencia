@@ -11,7 +11,7 @@
         header('Location: index.php');
     }
 
-    if(isset($_POST['btnCadastrar'])) {
+    if(isset($_POST['btnAtualizar'])) {
 
         $ticket = mysqli_escape_string($connect, $_POST['ticket']);
         $dia = mysqli_escape_string($connect, $_POST['dia']);
@@ -22,14 +22,15 @@
         $salasFisicas = mysqli_escape_string($connect, $_POST['salasFisicas']);
         $pin = mysqli_escape_string($connect, $_POST['pin']);
 
-        $sql = "INSERT INTO videoconferencias (ticket, dia, horaInicio,	horaFim, nomeParticipantes, unidadesParticipantes, salasFisicas, pin) VALUES ('$ticket', '$dia', '$inicio', '$fim', '$participantes', '$unidades', '$salasFisicas', '$pin')";
+        $id = mysqli_escape_string($connect, $_POST['id']);
+
+        $sql = "UPDATE videoconferencias SET ticket='$ticket', dia='$dia', horaInicio='$inicio', horaFim='$fim', nomeParticipantes='$participantes', unidadesParticipantes='$unidades', salasFisicas='$salasFisicas', pin='$pin' WHERE id='$id' ";
 
         if(mysqli_query($connect, $sql)) {
-            //$_SESSION['mensagem'] ='<div align="center" class="card-panel green lighten-4 green-text text-darken-4">Videoconferência cadastrada com Sucesso!!</div>';
-            $_SESSION['mensagem'] = 'Videoconferência cadastrada com Suceso!';
+            $_SESSION['mensagem'] = 'Videoconferência atualizada com Suceso!';
             header('Location: dashboard.php');
         } else {
-            $_SESSION['mensagem'] = 'Erro ao cadastar a Videoconferência, tente novamente!';
+            $_SESSION['mensagem'] = 'Erro ao atualizar a Videoconferência, tente novamente!';
             header('Location: dashboard.php');
         }
     }
