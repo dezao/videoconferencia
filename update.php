@@ -25,6 +25,7 @@
         $id = mysqli_escape_string($connect, $_POST['id']);
 
         $sql = "UPDATE videoconferencias SET ticket='$ticket', dia='$dia', horaInicio='$inicio', horaFim='$fim', nomeParticipantes='$participantes', unidadesParticipantes='$unidades', salasFisicas='$salasFisicas', pin='$pin' WHERE id='$id' ";
+        $sql = "UPDATE videoconferenciasOld SET ticket='$ticket', dia='$dia', horaInicio='$inicio', horaFim='$fim', nomeParticipantes='$participantes', unidadesParticipantes='$unidades', salasFisicas='$salasFisicas', pin='$pin' WHERE id='$id' ";
 
         if(mysqli_query($connect, $sql)) {
             $_SESSION['mensagem'] = 'Videoconferência atualizada com Suceso!';
@@ -33,6 +34,8 @@
             $_SESSION['mensagem'] = 'Erro ao atualizar a Videoconferência, tente novamente!';
             header('Location: dashboard.php');
         }
+
+        mysqli_query($connect, $sql2);
     }
 
     include_once './view/rodape.php';
