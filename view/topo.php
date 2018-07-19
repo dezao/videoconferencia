@@ -40,10 +40,10 @@
       <a href="./dashboard.php" class="brand-logo"><img src="./img/logo_raizen.png"></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="./cadastraVideo.php">Cadastrar Vídeo</a></li>
-        <li><a href="./cadastraAnalista.php">Cadastrar Analistas</a></li>
-        <li><a href="./painel.php">Painel de Vídeos</a></li>
-        <li><a href="logout.php">Sair</a></li>
+        <li><b><a href="./cadastraVideo.php">Cadastrar Vídeo</a></b></li>
+        <li><b><a href="./cadastraAnalista.php">Cadastrar Analistas</a></b></li>
+        <li><b><a href="javascript:window.open('painel.php', 'principal', 'status=no, toolbar=no, menubar=no, location=yes, fullscreen=1, scrolling=auto');">Painel de Vídeos</a></b></li>
+        <li><b><a href="logout.php">Sair</a></b></li>
       </ul>
     </div>
   </nav>
@@ -53,6 +53,3 @@
     <li><a href="cadastraAnalista.php">Cadastrar Analistas</a></li>
     <li><a href="painel.php">Painel de Vídeo</a></li>
   </ul>
-
-
-        
