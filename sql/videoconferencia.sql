@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 18/07/2018 às 11:58
+-- Tempo de geração: 19/07/2018 às 04:27
 -- Versão do servidor: 10.1.31-MariaDB
 -- Versão do PHP: 7.2.3
 
@@ -57,18 +57,41 @@ CREATE TABLE `videoconferencias` (
   `salasFisicas` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `horaInicio` time NOT NULL,
   `horaFim` time NOT NULL,
-  `pin` int(11) NOT NULL
+  `pin` int(11) NOT NULL,
+  `vip` char(3) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Fazendo dump de dados para tabela `videoconferencias`
 --
 
-INSERT INTO `videoconferencias` (`id`, `ticket`, `dia`, `unidadesParticipantes`, `nomeParticipantes`, `salasFisicas`, `horaInicio`, `horaFim`, `pin`) VALUES
-(40, 123456, '2018-07-17', 'Curitiba, Rio Grande, Rondópolis', 'Euzito, Francilucio, Myke, Marlistange', 'Mato Grosso, Sala 1, Sala 2', '13:00:00', '14:00:00', 11223344),
-(41, 11223344, '2018-07-19', 'Paranguá, Curitiba', 'Juca', 'Sala Treinamento, Rio Grande', '08:00:00', '10:00:00', 44556677),
-(42, 2078654, '2018-07-17', 'Santa Maria, Araraquara', 'Teste, teste 2, teste 3', 'Sala 6, Sala 10', '08:00:00', '09:00:00', 55443322),
-(43, 928765, '2018-07-20', 'D, E, F', 'A, B, C', 'G, H I', '10:00:00', '18:00:00', 55667788);
+INSERT INTO `videoconferencias` (`id`, `ticket`, `dia`, `unidadesParticipantes`, `nomeParticipantes`, `salasFisicas`, `horaInicio`, `horaFim`, `pin`, `vip`) VALUES
+(57, 20789087, '2018-07-19', 'Curitiba, Faria Lima', 'Rubio, Alan, Meneses', 'Conselho, Sala 2', '09:00:00', '10:30:00', 77889900, '');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `videoconferenciasOld`
+--
+
+CREATE TABLE `videoconferenciasOld` (
+  `id` int(11) NOT NULL DEFAULT '0',
+  `ticket` int(11) NOT NULL,
+  `dia` date NOT NULL,
+  `unidadesParticipantes` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `nomeParticipantes` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
+  `salasFisicas` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `horaInicio` time NOT NULL,
+  `horaFim` time NOT NULL,
+  `pin` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Fazendo dump de dados para tabela `videoconferenciasOld`
+--
+
+INSERT INTO `videoconferenciasOld` (`id`, `ticket`, `dia`, `unidadesParticipantes`, `nomeParticipantes`, `salasFisicas`, `horaInicio`, `horaFim`, `pin`) VALUES
+(0, 1231, '3543-04-05', 'fdsafds', '23432', 'asdfsa', '23:04:00', '06:05:00', 0);
 
 --
 -- Índices de tabelas apagadas
@@ -87,6 +110,12 @@ ALTER TABLE `videoconferencias`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `videoconferenciasOld`
+--
+ALTER TABLE `videoconferenciasOld`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de tabelas apagadas
 --
 
@@ -100,7 +129,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `videoconferencias`
 --
 ALTER TABLE `videoconferencias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
