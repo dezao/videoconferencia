@@ -13,6 +13,7 @@
 
     if(isset($_POST['btnAtualizar'])) {
 
+        $vip = mysqli_escape_string($connect, $_POST['vip']);
         $ticket = mysqli_escape_string($connect, $_POST['ticket']);
         $dia = mysqli_escape_string($connect, $_POST['dia']);
         $inicio = mysqli_escape_string($connect, $_POST['inicio']);
@@ -24,8 +25,7 @@
 
         $id = mysqli_escape_string($connect, $_POST['id']);
 
-        $sql = "UPDATE videoconferencias SET ticket='$ticket', dia='$dia', horaInicio='$inicio', horaFim='$fim', nomeParticipantes='$participantes', unidadesParticipantes='$unidades', salasFisicas='$salasFisicas', pin='$pin' WHERE id='$id' ";
-        $sql = "UPDATE videoconferenciasOld SET ticket='$ticket', dia='$dia', horaInicio='$inicio', horaFim='$fim', nomeParticipantes='$participantes', unidadesParticipantes='$unidades', salasFisicas='$salasFisicas', pin='$pin' WHERE id='$id' ";
+        $sql = "UPDATE videoconferencias SET vip='$vip', ticket='$ticket', dia='$dia', horaInicio='$inicio', horaFim='$fim', nomeParticipantes='$participantes', unidadesParticipantes='$unidades', salasFisicas='$salasFisicas', pin='$pin' WHERE id='$id' ";
 
         if(mysqli_query($connect, $sql)) {
             $_SESSION['mensagem'] = 'Videoconferência atualizada com Suceso!';

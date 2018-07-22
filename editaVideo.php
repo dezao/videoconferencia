@@ -21,6 +21,18 @@ if (isset($_GET['id'])) {
                 <form action="update.php" method="POST">
                    
                    <input type="hidden" name="id" id="id" value="<?php echo $dadosEdita['id']; ?>">
+                    <div class="input-field col s12">
+                        <select name="vip" id="vip">
+                        <?php 
+
+                            $sim_nao = $dadosEdita['vip']; 
+                            echo "<option value='".$sim_nao."'>".$sim_nao."</option>"; 
+                        ?> 
+                            <option value="SIM">SIM</option>
+                            <option value="NÃO">NÃO</option>
+                        </select>
+                        <label for="vip">VIP?</label>
+                    </div>
 
                     <div class="input-field col s12">
                         <input type="number" name="ticket" id="ticket" value="<?php echo $dadosEdita['ticket']; ?>">

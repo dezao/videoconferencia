@@ -5,5 +5,8 @@ $(document).ready(function(){
     $('.slider').slider();
     //Modal
     $('.modal').modal();
-    //Abre Popup
+    //Select
+    $('select').formSelect();
+    //Dropdown
+    $(".dropdown-trigger").dropdown({hover: false});
 });

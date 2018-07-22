@@ -13,6 +13,7 @@
 
     if(isset($_POST['btnCadastrar'])) {
 
+        $vip = mysqli_escape_string($connect, $_POST['vip']);
         $ticket = mysqli_escape_string($connect, $_POST['ticket']);
         $dia = mysqli_escape_string($connect, $_POST['dia']);
         $inicio = mysqli_escape_string($connect, $_POST['inicio']);
@@ -21,11 +22,9 @@
         $unidades = mysqli_escape_string($connect, $_POST['unidades']);
         $salasFisicas = mysqli_escape_string($connect, $_POST['salasFisicas']);
         $pin = mysqli_escape_string($connect, $_POST['pin']);
+       
 
-        $sql = "INSERT INTO videoconferencias (ticket, dia, horaInicio,	horaFim, nomeParticipantes, unidadesParticipantes, salasFisicas, pin) VALUES ('$ticket', '$dia', '$inicio', '$fim', '$participantes', '$unidades', '$salasFisicas', '$pin')";
-        $sql2 = "INSERT INTO videoconferenciasOld (ticket, dia, horaInicio,	horaFim, nomeParticipantes, unidadesParticipantes, salasFisicas, pin) VALUES ('$ticket', '$dia', '$inicio', '$fim', '$participantes', '$unidades', '$salasFisicas', '$pin')";
-
-        mysqli_query($connect, $sql2);
+        $sql = "INSERT INTO videoconferencias (vip, ticket, dia, horaInicio, horaFim, nomeParticipantes, unidadesParticipantes, salasFisicas, pin) VALUES ('$vip', '$ticket', '$dia', '$inicio', '$fim', '$participantes', '$unidades', '$salasFisicas', '$pin')";
 
         if(mysqli_query($connect, $sql)) {
             $_SESSION['mensagem'] = 'Videoconferência cadastrada com Suceso!';
