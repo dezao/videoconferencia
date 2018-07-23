@@ -72,8 +72,8 @@ if (isset($_GET['id'])) {
                         <label for="pin">PIN</label>
                     </div>
 
-                    <button type="submit" name="btnAtualizar" class="btn waves-effect waves-light">ATUALIZAR</button>
-                    <a href="dashboard.php" class="btn green waves-effect waves-light">LISTA DE VIDEOCONFERÊNCIAS</a>
+                    <button type="submit" name="btnCadastrar" class="btn green waves-effect waves-light">Cadastrar</button>
+                    <a href="dashboard.php" class="btn red waves-effect waves-light">Cancelar</a>
                 </form>
             </div>
         </div>

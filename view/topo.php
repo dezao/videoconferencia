@@ -38,7 +38,7 @@
 </head>
 <body>
     
-  <!--Estrutura Dropdown Menu NavBar -->
+  <!--Estrutura Dropdown Menu Analistas NavBar -->
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="./cadastraAnalista.php">CADASTRAR</a></li>
     <li class="divider"></li>

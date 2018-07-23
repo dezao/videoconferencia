@@ -58,8 +58,8 @@ include_once './view/topo.php';
                         <label for="pin">PIN</label>
                     </div>
 
-                    <button type="submit" name="btnCadastrar" class="btn waves-effect waves-light">Cadastrar</button>
-                    <a href="dashboard.php" class="btn green waves-effect waves-light">Lista de Videoconferência</a>
+                    <button type="submit" name="btnCadastrar" class="btn green waves-effect waves-light">Cadastrar</button>
+                    <a href="dashboard.php" class="btn red waves-effect waves-light">Cancelar</a>
                 </form>
             </div>
         </div>
