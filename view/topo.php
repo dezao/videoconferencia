@@ -17,6 +17,7 @@
     $resultado = mysqli_query($connect, $sql);
     $dados = mysqli_fetch_array($resultado);
 
+
 ?>
 
 <!DOCTYPE html>
@@ -31,19 +32,36 @@
     <link rel="stylesheet" href="css/materialize.min.css">
     <!--Custom CSS-->
     <link rel="stylesheet" href="css/custom.css">
+    <!--Favicon-->
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png">
     <title>Sistema de Videoconferência</title>
 </head>
 <body>
+    
+  <!--Estrutura Dropdown Menu Analistas NavBar -->
+  <ul id="dropdown1" class="dropdown-content">
+    <li><a href="./cadastraAnalista.php">CADASTRAR</a></li>
+    <li class="divider"></li>
+    <li><a href="./listaAnalista.php">LISTAR</a></li>
+  </ul>
 
     <nav>
     <div class="nav-wrapper #880e4f pink darken-4">
       <a href="./dashboard.php" class="brand-logo"><img src="./img/logo_raizen.png"></a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><b><a href="./cadastraVideo.php">Cadastrar Vídeo</a></b></li>
-        <li><b><a href="./cadastraAnalista.php">Cadastrar Analistas</a></b></li>
-        <li><b><a href="javascript:window.open('painel.php', 'principal', 'status=no, toolbar=no, menubar=no, location=yes, fullscreen=1, scrolling=auto');">Painel de Vídeos</a></b></li>
-        <li><b><a href="logout.php">Sair</a></b></li>
+        <li><b><a href="./cadastraVideo.php"><i class="material-icons left">ondemand_video</i>CADASTRAR VIDEO</a></b></li>
+        <?php 
+          
+         //Veriicando se usuário é ADM
+          if ($dados['adm'] == 0) {
+          } else {
+            echo '<b><li><a class="dropdown-trigger" data-target="dropdown1"><i class="material-icons left" left>people</i>ANALISTAS<i class="material-icons right">arrow_drop_down</i></a></li></b>';
+            //echo '<li><b><a href="./cadastraAnalista.php">CADASTRAR ANALISTA</a></b></li>';
+          }
+        ?>
+        <li><b><a href="javascript:window.open('painel.php', 'principal', 'status=no, toolbar=no, menubar=no, location=yes, fullscreen=1, scrolling=auto');"><i class="material-icons left">videocam</i>PAINEL VIDEOCONFERÊNCIA</a></b></li>
+        <li><b><a href="logout.php"><i class="material-icons left">exit_to_app</i>SAIR</a></b></li>
       </ul>
     </div>
   </nav>

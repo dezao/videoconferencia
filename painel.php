@@ -25,12 +25,13 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="refresh" content="60" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Materialize CSS-->
     <link rel="stylesheet" href="css/materialize.min.css">
     <!--Custom CSS-->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/customPainel.css">
     <title>Sistema de Videoconferência</title>
 </head>
 <body>
@@ -38,25 +39,26 @@
 
         <div class="row">
             <div class="col s12 m12">
-            <div class="card-panel #880e4f pink darken-4 white-text flow-text center-align s12"><h5>PAINEL DE VIDEOCONFERÊNCIAS</h5></div>
-                <table class="striped responsive-table">
+            <div class="card-panel #880e4f pink darken-4 white-text flow-text center-align s12"><img src="./img/logo_raizen.png"><h5>PAINEL DE VIDEOCONFERÊNCIAS</h5></div>
+            <table class="striped responsive-table">
                     <thead>
                         <tr>
                             <th hidden>ID</th>
-                            <th>Ticket</th>
-                            <th>Data</th>
-                            <th>Hora Inicial</th>
-                            <th>Hora Final</th>
-                            <th>Participantes</th>
-                            <th>Unidades</th>
-                            <th>Salas Físicas</th>
+                            <th>VIP</th>
+                            <th>TICKET</th>
+                            <th>DATA</th>
+                            <th>HORA INÍCIO</th>
+                            <th>HORA FIM</th>
+                            <th>PARTICIPANTES</th>
+                            <th>UNIDADES</th>
+                            <th>SALAS FÍSICAS</th>
                             <th>PIN</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-
-                            $sqlVideo = "SELECT * FROM videoconferencias ORDER BY dia, horaInicio"; 
+                            $dataDoDia = date("Y/m/d");
+                            $sqlVideo = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' ORDER BY dia, horaInicio"; 
                             $resultadoVideo = mysqli_query($connect, $sqlVideo);
                             mysqli_close($connect);
 
@@ -64,28 +66,36 @@
 
                                 while($dadosVideo = mysqli_fetch_array($resultadoVideo)) {
 
+                                    $vip = $dadosVideo['vip'];
+
+                                    switch($vip) {
+                                        case 'SIM' : $cor = 'red'; $corFonte = '#fff'; break;
+                                        case 'NÃO' : $cor = '';  $corFonte = '' ; break;
+                                    }
+                                    
                         ?>
-                            <tr>
+                            <tr style='background-color:<?php echo $cor;?>; color:<?php echo $corFonte;?>'>
                                 <td hidden ><?php echo $dadosVideo['id']; ?></td>
+                                <td clas="exibe"><?php echo $dadosVideo['vip'];?></td>
                                 <td><?php echo $dadosVideo['ticket']; ?></td>
                                     <?php $dia = $dadosVideo['dia']; 
                                         $dia = date('d/m/Y', strtotime($dia));
                                     ?>
-                                <td><?php echo $dia ?></td>
-                                <td><?php echo $dadosVideo['horaInicio']; ?></td>
-                                <td><?php echo $dadosVideo['horaFim']; ?></td>
-                                <td><?php echo $dadosVideo['nomeParticipantes']; ?></td>
-                                <td><?php echo $dadosVideo['unidadesParticipantes']; ?></td>
-                                <td><?php echo $dadosVideo['salasFisicas']; ?></td>
-                                <td><b><?php echo $dadosVideo['pin']; ?></b></td>
-                                
+                                <td clas="exibe"><?php echo $dia; ?></td>
+                                <td clas="exibe"><?php echo $dadosVideo['horaInicio']; ?></td>
+                                <td clas="exibe"><?php echo $dadosVideo['horaFim']; ?></td>
+                                <td clas="exibe"><?php echo $dadosVideo['nomeParticipantes']; ?></td>
+                                <td clas="exibe"><?php echo $dadosVideo['unidadesParticipantes']; ?></td>
+                                <td clas="exibe"><?php echo $dadosVideo['salasFisicas']; ?></td>
+                                <td clas="exibe"><b><?php echo $dadosVideo['pin']; ?></b></td>
+
                             </tr>
                         <?php 
                         }  
                             } else { ?>
                                 
                                 <tr>
-                                    <td colspan="8"><div class="card-panel red center-align s12">NENHUM REGISTRO ENCONTRADO</div></td>
+                                <td colspan="12"><div class="card-panel red center-align s12 text-lighten-1">NENHUM REGISTRO ENCONTRADO</div></td>
                                 </tr>
                         <?php    }  ?>
                     </tbody>

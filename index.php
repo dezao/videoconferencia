@@ -39,7 +39,6 @@
         }
     }
 
-    
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +82,7 @@
                                 <br>
                         </div>  
                                 <div class="col S6 offset-s3">     
-                                    <button align="center" class="btn waves-effect waves-light btn-large #880e4f pink darken-4" type="submit" name="btnLogar">Logar
+                                    <button class="btn waves-effect waves-light btn-large #880e4f pink darken-4 right" type="submit" name="btnLogar">Logar
                                         <i class="material-icons right">send</i>
                                     </button>
                                 </div> 
