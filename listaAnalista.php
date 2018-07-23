@@ -44,7 +44,7 @@
                                 <td><?php echo $dadosAnalistas['login']; ?></td>
                                 <td>******</td>
                                 <?php
-                                    if($dadosAnalistas['adm'] == 1) {
+                                    if ($dadosAnalistas['adm'] == 1) {
                                         echo '<td>SIM</td>';
                                     } else {
                                         echo '<td>NÃO</td>';

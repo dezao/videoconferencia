@@ -9,7 +9,7 @@ include_once './view/topo.php';
     <div class="container">
         <div class="row">
             <div class="col s12 m12">
-                <form action="create.php" method="POST">
+                <form action="createVideo.php" method="POST">
 
                     <div class="input-field col s12">
                         <select name="vip" id="vip" required>

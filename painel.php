@@ -42,7 +42,7 @@
             <div class="card-panel #880e4f pink darken-4 white-text flow-text center-align s12"><img src="./img/logo_raizen.png"><h5>PAINEL DE VIDEOCONFERÊNCIAS</h5></div>
             <table class="striped responsive-table">
                     <thead>
-                        <tr>
+                        <tr class="striped #880e4f pink darken-4 white-text">
                             <th hidden>ID</th>
                             <th>VIP</th>
                             <th>TICKET</th>

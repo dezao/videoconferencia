@@ -9,7 +9,7 @@ include_once './view/topo.php';
     <div class="container">
         <div class="row">
             <div class="col s12 m12">
-                <form action="createAnalista.php" method="POST">
+                <form action="./createAnalista.php" method="POST">
 
                     <div class="input-field col s12">
                         <select name="adm" id="adm" required>
@@ -33,7 +33,7 @@ include_once './view/topo.php';
                         <label for="senha">Senha</label>
                     </div>
 
-                    <button type="submit" name="btnCadastrar" class="btn green waves-effect waves-light">Cadastrar</button>
+                    <button type="submit" name="btnCadastrarAnalista" class="btn green waves-effect waves-light">Cadastrar</button>
                     <a href="dashboard.php" class="btn red waves-effect waves-light">Cancelar</a>
                 </form>
             </div>

@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
     <div class="container">
         <div class="row">
             <div class="col s12 m12">
-                <form action="update.php" method="POST">
+                <form action="updateVideo.php" method="POST">
                    
                    <input type="hidden" name="id" id="id" value="<?php echo $dadosEdita['id']; ?>">
                     <div class="input-field col s12">
@@ -72,7 +72,7 @@ if (isset($_GET['id'])) {
                         <label for="pin">PIN</label>
                     </div>
 
-                    <button type="submit" name="btnCadastrar" class="btn green waves-effect waves-light">Cadastrar</button>
+                    <button type="submit" name="btnAtualizarVideo" class="btn green waves-effect waves-light">Atualizar</button>
                     <a href="dashboard.php" class="btn red waves-effect waves-light">Cancelar</a>
                 </form>
             </div>

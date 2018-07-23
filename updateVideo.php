@@ -11,7 +11,7 @@
         header('Location: index.php');
     }
 
-    if(isset($_POST['btnAtualizar'])) {
+    if(isset($_POST['btnAtualizarVideo'])) {
 
         $vip = mysqli_escape_string($connect, $_POST['vip']);
         $ticket = mysqli_escape_string($connect, $_POST['ticket']);

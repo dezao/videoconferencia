@@ -19,22 +19,17 @@
         $senha = md5(mysqli_escape_string($connect, $_POST['senha']));
 
         $sql = "INSERT INTO usuarios (adm, nome, login, senha) VALUES ('$adm', '$nome', '$login', '$senha')";
-       /* $resultado = mysqli_query($connect, $sql);
 
-        $verificaLogin = mysqli_fetch_array($resultado);
-        $novoLogin = $resultado['login'];
-
-       if ($novoLogin == $login) {
-            $_SESSIOn['mensagem'] = 'Login já utlizado, utilize um novo';
-        } else */ 
         if(mysqli_query($connect, $sql)) {
             $_SESSION['mensagem'] = 'Analista cadastrado com Suceso!';
             header('Location: dashboard.php');
         } else {
-            $_SESSION['mensagem'] = 'Erro ao cadastar Analista, tente novamente!';
+            $_SESSION['mensagem'] = 'Erro ao cadastar o analista, tente novamente!';
             header('Location: dashboard.php');
         }
 
     }
 
     include_once './view/rodape.php';
+
+?>  

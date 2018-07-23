@@ -65,7 +65,7 @@
 
         <div class="row">
             <div class="col s12 m12">
-                <p class="center-align"><b>BEM VINDO AO SISTEMA DE VIDEOCONFERÊNCIAS <?php echo strtoupper($dados['nome']); ?>!</b></p>
+                <!--<p class="center-align"><b>BEM VINDO AO SISTEMA DE VIDEOCONFERÊNCIAS <?php echo strtoupper($dados['nome']); ?>!</b></p>-->
                 <h3 class="light center-align">DASHBOARD VIDEOCONFERÊNCIAS</h3>
                 <hr> 
                      <section class="col s12 m6 l12 center-align">
