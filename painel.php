@@ -19,6 +19,28 @@
 
 ?>
 
+    <script>
+        function horas() {
+            camada = document.getElementById('relogio');
+            hoje = new Date();
+            hora = hoje.getHours();
+            if(hora<=9){
+                hora = "0" + hora;
+            }
+            minuto = hoje.getMinutes();
+            if(minuto<=9) {
+                minuto = "0" + minuto;
+            }
+            segundo = hoje.getSeconds();
+            if(segundo<=9) {
+                segundo = "0" + segundo;
+            }
+            camada.innerHTML = hora + ":" + minuto + ":" + segundo;
+            setTimeout("horas()",1000);
+        }
+    </script>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -34,31 +56,33 @@
     <link rel="stylesheet" href="css/customPainel.css">
     <title>Sistema de Videoconferência</title>
 </head>
-<body>
+<body onload="horas()">
 
 
         <div class="row">
             <div class="col s12 m12">
             <div class="card-panel #880e4f pink darken-4 white-text flow-text center-align s12"><img src="./img/logo_raizen.png"><h5>PAINEL DE VIDEOCONFERÊNCIAS</h5></div>
+            <div id="relogio"></div>
             <table class="striped responsive-table">
                     <thead>
-                        <tr class="striped #880e4f pink darken-4 white-text">
+                        <tr>
                             <th hidden>ID</th>
                             <th>VIP</th>
                             <th>TICKET</th>
                             <th>DATA</th>
-                            <th>HORA INÍCIO</th>
-                            <th>HORA FIM</th>
+                            <th>INÍCIO</th>
+                            <th>FIM</th>
                             <th>PARTICIPANTES</th>
                             <th>UNIDADES</th>
                             <th>SALAS FÍSICAS</th>
                             <th>PIN</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
                         <?php
                             $dataDoDia = date("Y/m/d");
-                            $sqlVideo = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' ORDER BY dia, horaInicio"; 
+                            $sqlVideo = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' AND horaInicio > NOW() ORDER BY dia, horaInicio"; 
                             $resultadoVideo = mysqli_query($connect, $sqlVideo);
                             mysqli_close($connect);
 
@@ -76,18 +100,18 @@
                         ?>
                             <tr style='background-color:<?php echo $cor;?>; color:<?php echo $corFonte;?>'>
                                 <td hidden ><?php echo $dadosVideo['id']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['vip'];?></td>
+                                <td><?php echo $dadosVideo['vip'];?></td>
                                 <td><?php echo $dadosVideo['ticket']; ?></td>
                                     <?php $dia = $dadosVideo['dia']; 
                                         $dia = date('d/m/Y', strtotime($dia));
                                     ?>
-                                <td clas="exibe"><?php echo $dia; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['horaInicio']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['horaFim']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['nomeParticipantes']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['unidadesParticipantes']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['salasFisicas']; ?></td>
-                                <td clas="exibe"><b><?php echo $dadosVideo['pin']; ?></b></td>
+                                <td><?php echo $dia; ?></td>
+                                <td><?php echo $dadosVideo['horaInicio']; ?></td>
+                                <td><?php echo $dadosVideo['horaFim']; ?></td>
+                                <td><?php echo $dadosVideo['nomeParticipantes']; ?></td>
+                                <td><?php echo $dadosVideo['unidadesParticipantes']; ?></td>
+                                <td><?php echo $dadosVideo['salasFisicas']; ?></td>
+                                <td><?php echo $dadosVideo['pin']; ?></td>
 
                             </tr>
                         <?php 
@@ -104,11 +128,6 @@
                  
             </div>
         </div>
-
-
-    <center>
-        
-    </center>
 
 
 <?php

@@ -37,8 +37,8 @@
     <title>Sistema de Videoconferência</title>
 </head>
 <body>
-  
-  <div class="panel right-align #880e4f pink darken-2 white-text">BEM VINDO <?php echo strtoupper($dados['nome']); ?>!</b></div>  
+  <div class="col s6 right-align #880e4f pink darken-2 white-text"><b>BEM VINDO <?php echo strtoupper($dados['nome']) . '!'; ?></b></div>  
+  </div>
   <!--Estrutura Dropdown Menu Analistas NavBar -->
   <ul id="dropdown1" class="dropdown-content">
     <li><a href="./cadastraAnalista.php">CADASTRAR</a></li>

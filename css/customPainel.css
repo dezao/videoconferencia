@@ -1,25 +1,37 @@
-td {
-    padding: 15px 5px;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 2px;
-    font-size: 20px;
-    font-weight: 900;
-}
+    /* td {
+        padding: 15px 5px;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 2px;
+        font-size: 20px;
+        font-weight: 900;
+    }
 
-th {
-    padding: 15px 5px;
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 2px;
-    font-size: 20px;
-}
+    th {
+        padding: 15px 5px;
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 2px;
+        font-size: 20px;
+    } */
 
 h5 {
     font-size:30px;
     line-height: 110%;
     margin: 1.0933333333rem 0 .656rem 0;
     font-weight: 900;
+}
+
+#relogio {
+    position: relative;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+    color: #fff;
+    font-size: 50px;
+    margin-right: 10px;
+    margin-left: -150px;
+    margin-top: -125px;
 }

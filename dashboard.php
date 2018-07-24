@@ -6,6 +6,7 @@
     include_once './view/mensagem.php';
 
     $dataDoDia = date('Y/m/d');
+    
     //Total de Videoconferencias VIP
     $sqlVideo2 = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' ORDER BY dia, horaInicio"; 
     $resultadoVideo2 = mysqli_query($connect, $sqlVideo2);
