@@ -47,7 +47,7 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta http-equiv="refresh" content="60" />
+    <meta http-equiv="refresh" content="60"/>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Materialize CSS-->
@@ -63,8 +63,8 @@
             <div class="col s12 m12">
             <div class="card-panel #880e4f pink darken-4 white-text flow-text center-align s12"><img src="./img/logo_raizen.png"><h5>PAINEL DE VIDEOCONFERÊNCIAS</h5></div>
             <div id="relogio"></div>
-            <table class="striped responsive-table">
-                    <thead>
+            <table class="striped responsive-table centered">
+                    <thead class="striped responsive-table centered #880e4f darken-5 pink darken-2">
                         <tr>
                             <th hidden>ID</th>
                             <th>VIP</th>
@@ -90,27 +90,32 @@
 
                                 while($dadosVideo = mysqli_fetch_array($resultadoVideo)) {
 
-                                    $vip = $dadosVideo['vip'];
+                                    $vip = $dadosVideo['vip'];                                        
 
                                     switch($vip) {
                                         case 'SIM' : $cor = 'red'; $corFonte = '#fff'; break;
                                         case 'NÃO' : $cor = '';  $corFonte = '' ; break;
                                     }
                                     
+                                    $inicio = date('H:i', strtotime('-15 minute', strtotime($dadosVideo['horaInicio'])));
+
+                                    if ($inicio === date('H:i')) {
+                                        echo "<embed src='./wav/sweetalertsound.wav' width='1' height='1'>";
+                                    }
                         ?>
                             <tr style='background-color:<?php echo $cor;?>; color:<?php echo $corFonte;?>'>
                                 <td hidden ><?php echo $dadosVideo['id']; ?></td>
                                 <td><?php echo $dadosVideo['vip'];?></td>
                                 <td><?php echo $dadosVideo['ticket']; ?></td>
                                     <?php $dia = $dadosVideo['dia']; 
-                                        $dia = date('d/m/Y', strtotime($dia));
+                                        $dia = date('d/m', strtotime($dia));
                                     ?>
                                 <td><?php echo $dia; ?></td>
-                                <td><?php echo $dadosVideo['horaInicio']; ?></td>
-                                <td><?php echo $dadosVideo['horaFim']; ?></td>
-                                <td><?php echo $dadosVideo['nomeParticipantes']; ?></td>
-                                <td><?php echo $dadosVideo['unidadesParticipantes']; ?></td>
-                                <td><?php echo $dadosVideo['salasFisicas']; ?></td>
+                                <td><?php echo date('H:i', strtotime($dadosVideo['horaInicio'])); ?></td>
+                                <td><?php echo date('H:i', strtotime($dadosVideo['horaFim'])); ?></td>
+                                <td><?php echo strtoupper($dadosVideo['nomeParticipantes']); ?></td>
+                                <td><?php echo strtoupper($dadosVideo['unidadesParticipantes']); ?></td>
+                                <td><?php echo strtoupper($dadosVideo['salasFisicas']); ?></td>
                                 <td><?php echo $dadosVideo['pin']; ?></td>
 
                             </tr>
@@ -121,7 +126,9 @@
                                 <tr>
                                 <td colspan="12"><div class="card-panel red center-align s12 text-lighten-1">NENHUM REGISTRO ENCONTRADO</div></td>
                                 </tr>
-                        <?php    }  ?>
+                        <?php    }  
+                        
+                        ?>
                     </tbody>
                 </table>
                 <br>

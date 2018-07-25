@@ -11,6 +11,8 @@
         header('Location: index.php');
     }
 
+    $dataDoDia = date('Y/m/d');
+    
     //Dados
     $id = $_SESSION['id_usuario'];
     $sql = "SELECT * FROM usuarios WHERE id = '$id'";

@@ -5,10 +5,12 @@
 
     include_once './view/mensagem.php';
 
-    $dataDoDia = date('Y/m/d');
-    
+    include_once './inc/contadoresDashboard.php';
+
+    /* $dataDoDia = date('Y/m/d'); */
+
     //Total de Videoconferencias VIP
-    $sqlVideo2 = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' ORDER BY dia, horaInicio"; 
+    $sqlVideo2 = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia'"; 
     $resultadoVideo2 = mysqli_query($connect, $sqlVideo2);
 
    if (mysqli_num_rows($resultadoVideo2) > 0) {
@@ -18,11 +20,11 @@
             if($vip2 === 'SIM') {
                 $contVip ++;
             }            
+        }
     }
-}
 
     //Total de Videoconferencias do dia
-    $sqlVideo3 = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' ORDER BY dia, horaInicio"; 
+    $sqlVideo3 = "SELECT * FROM videoconferencias"; 
     $resultadoVideo3 = mysqli_query($connect, $sqlVideo3);
 
    if (mysqli_num_rows($resultadoVideo3) > 0) {
@@ -43,7 +45,7 @@
 
     //Total de Videoconferências do próximo dia
     $dataDoDia = date('Y/m/d', strtotime($dataDoDia . '+ 1 days'));
-    $sqlVideo4 = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' ORDER BY dia, horaInicio"; 
+    $sqlVideo4 = "SELECT * FROM videoconferencias"; 
     $resultadoVideo4 = mysqli_query($connect, $sqlVideo4);
 
    if (mysqli_num_rows($resultadoVideo4) > 0) {
@@ -70,7 +72,8 @@
                 <h3 class="light center-align">DASHBOARD VIDEOCONFERÊNCIAS</h3>
                 <hr> 
                      <section class="col s12 m6 l12 center-align">
-                        <!--Card1-->
+                        
+                     <!--Videoconferências do Dia-->
                         <article class="col s12 l6 xl4">
                             <div class="card blue">
                                 <div class="card-image">
@@ -90,7 +93,7 @@
                             </div>        
                         </article>
                         
-                        <!--Card2-->
+                        <!--Videoconferências de amanhã-->
                         <article class="col s12 l6 xl4">
                             <div class="card green">
                                 <div class="card-image">
@@ -110,7 +113,7 @@
                             </div>        
                         </article>
                         
-                        <!--Card3-->
+                        <!--Videoconferências VIP-->
                         <article class="col s12 l6 xl4">
                             <div class="card red">
                                 <div class="card-image">
@@ -131,25 +134,27 @@
                         </article>  
 
                     </section>
-                <table class="striped responsive-table">
+                <table class="striped responsive-table centered">
                     <thead>
                         <tr>
                             <th hidden>ID</th>
                             <th>VIP</th>
-                            <th>Ticket</th>
-                            <th>Data</th>
-                            <th>Hora Inicial</th>
-                            <th>Hora Final</th>
-                            <th>Participantes</th>
-                            <th>Unidades</th>
-                            <th>Salas Físicas</th>
+                            <th>TICKET</th>
+                            <th>DATA</th>
+                            <th>INICIO</th>
+                            <th>FIM</th>
+                            <th>PARTICIPANTES</th>
+                            <th>UNIDADES</th>
+                            <th>SALAS FÍSICAS</th>
                             <th>PIN</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                            
-                            $sqlVideo = "SELECT * FROM videoconferencias ORDER BY dia, horaInicio"; 
+                           $dataDoDia = date("Y/m/d");
+                           $sqlVideo = "SELECT * FROM videoconferencias WHERE dia >= '$dataDoDia' ORDER BY dia, horaInicio";
+                           //$sqlVideo = "SELECT * FROM videoconferencias ORDER BY dia, horaInicio"; 
                             $resultadoVideo = mysqli_query($connect, $sqlVideo);
                             mysqli_close($connect);
 
@@ -172,13 +177,13 @@
                                     <?php $dia = $dadosVideo['dia']; 
                                         $dia = date('d/m/Y', strtotime($dia));
                                     ?>
-                                <td clas="exibe"><?php echo $dia ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['horaInicio']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['horaFim']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['nomeParticipantes']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['unidadesParticipantes']; ?></td>
-                                <td clas="exibe"><?php echo $dadosVideo['salasFisicas']; ?></td>
-                                <td clas="exibe"><b><?php echo $dadosVideo['pin']; ?></b></td>
+                                <td><?php echo $dia ?></td>
+                                <td><?php echo $dadosVideo['horaInicio']; ?></td>
+                                <td><?php echo $dadosVideo['horaFim']; ?></td>
+                                <td><?php echo strtoupper($dadosVideo['nomeParticipantes']); ?></td>
+                                <td><?php echo strtoupper($dadosVideo['unidadesParticipantes']); ?></td>
+                                <td><?php echo strtoupper($dadosVideo['salasFisicas']); ?></td>
+                                <td><b><?php echo $dadosVideo['pin']; ?></b></td>
                                 
                                 <td><a href="editaVideo.php?id=<?php echo $dadosVideo['id']; ?>" class="btn-floating orange waves-effect waves-light"><i class="material-icons">edit</i></a></td>
                                 <td><a href="#modal<?php echo $dadosVideo['id']; ?>" class="btn-floating red modal-trigger waves-effect waves-light"><i class="material-icons">delete</i></a></td>
