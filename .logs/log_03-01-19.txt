@@ -1,0 +1,3 @@
+[13:58:43] - [::1] - Videoconferencia ticket 012030 cadastrada  por [Andre Oliveira] 
+[14:32:25] - [::1] - Videoconferencia ticket 67098 cadastrada  por [Andre Oliveira] 
+[14:50:19] - [::1] - Videoconferencia ticket 44444 cadastrada  por [Andre Oliveira] 

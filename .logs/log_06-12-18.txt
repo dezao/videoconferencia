@@ -1,0 +1,2 @@
+[17:55:17] - [::1] - Videoconferencia ticket 123 cadastrada  por [André Cunha de Oliveira] 
+[17:56:13] - [::1] - Videoconferencia ticket 123 cadastrada  por [André Cunha de Oliveira] 

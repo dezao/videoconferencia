@@ -1,0 +1,5 @@
+[16:22:49] - [::1] - Videoconferencia ticket 2085622 deletada por [Andre Oliveira] 
+[16:23:03] - [::1] - Videoconferencia ticket 0210144 cadastrada  por [Andre Oliveira] 
+[16:23:31] - [::1] - Videoconferencia ticket 210144  editadada  por [Andre Oliveira] 
+[16:24:11] - [::1] - Videoconferencia ticket 210144  editadada  por [Andre Oliveira] 
+[16:24:26] - [::1] - Videoconferencia ticket 210144  editadada  por [Andre Oliveira] 

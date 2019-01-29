@@ -1,0 +1,2 @@
+[20:31:09] - [::1] - Videoconferencia ticket 1234567890 cadastrada  por [Andre Oliveira] 
+[22:26:56] - [::1] - Videoconferencia ticket 2085622 deletada por [Andre Oliveira] 

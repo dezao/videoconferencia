@@ -29,6 +29,50 @@
     $resultado = mysqli_query($connect, $sql);
     $dados = mysqli_fetch_array($resultado);
     $usuarioUnidade = $dados['unidade'];
+
+
+    // leitura das datas automaticamente
+    $dia = date('d');
+    $mes = date('m');
+    //$ano = date('Y');
+    $semana = date('w');
+    //$cidade = "Digite aqui sua cidade";
+
+    // configuração mes 
+
+    switch ($mes){
+
+    case 1: $mes = "01"; break;
+    case 2: $mes = "02"; break;
+    case 3: $mes = "03"; break;
+    case 4: $mes = "04"; break;
+    case 5: $mes = "05"; break;
+    case 6: $mes = "06"; break;
+    case 7: $mes = "07"; break;
+    case 8: $mes = "08"; break;
+    case 9: $mes = "09"; break;
+    case 10: $mes = "10"; break;
+    case 11: $mes = "11"; break;
+    case 12: $mes = "12"; break;
+
+    }
+
+
+    // configuração semana 
+
+    switch ($semana) {
+
+    case 0: $semana = "DOM"; break;
+    case 1: $semana = "SEG"; break;
+    case 2: $semana = "TER"; break;
+    case 3: $semana = "QUA"; break;
+    case 4: $semana = "QUI"; break;
+    case 5: $semana = "SEX"; break;
+    case 6: $semana = "SAB"; break;
+
+    }
+    //Agora basta imprimir na tela...
+    //echo ("$semana | $dia/$mes");
     
 
 ?>
@@ -79,8 +123,9 @@
             <div class="card-panel #880e4f pink darken-4 white-text flow-text center-align s12"><img src="../../assets/img/logo_raizen.png"><h5>PAINEL DE VIDEOCONFERÊNCIAS</h5></div>
             <div id="data"> 
                 <?php 
-                    $date = date('Y-m-d');
-                    echo strtoupper(strftime("%a | %d/%m", strtotime($date))); 
+                    // $date = date('Y-m-d');
+                    // echo strtoupper(strftime("%a | %d/%m", strtotime($date))); 
+                    echo ("$semana | $dia/$mes");
                 ?> 
             </div>
             <div id="relogio"></div>

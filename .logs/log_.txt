@@ -1,0 +1,2 @@
+[2019-01-03 14:47:49] [INFO]: Videoconferencia ticket 11111111 cadastrada  por [Andre Oliveira]
+[2019-01-03 14:47:49] [ERROR]: Erro ao cadastrada a Videoconferencia ticket 11111111

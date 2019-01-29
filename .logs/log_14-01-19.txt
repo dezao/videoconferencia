@@ -1,0 +1,4 @@
+[10:44:58] - [::1] - Erro ao cadastrar o usuárioTR012788 
+[10:48:13] - [::1] - Analista TR012788 - Wndell cadastrado por [Andre Oliveira] 
+[10:48:20] - [::1] - Analista TR012788 alterado por [Andre Oliveira] 
+[10:48:26] - [::1] - Analista tr012788 alterado por [Andre Oliveira] 

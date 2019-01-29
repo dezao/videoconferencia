@@ -1,0 +1,11 @@
+[11:37:42] - [::1] - Videoconferencia ticket 123 cadastrada  por [André Cunha de Oliveira] 
+[11:37:50] - [::1] - Videoconferencia ticket 123  editadada  por André Cunha de Oliveira. 
+[11:37:58] - [::1] - Videoconferencia ticket 123  editadada  por André Cunha de Oliveira. 
+[11:38:54] - [::1] - Videoconferencia ticket 123 cadastrada  por [André Cunha de Oliveira] 
+[11:40:17] - [::1] - Videoconferencia ticket 123  editadada  por André Cunha de Oliveira. 
+[11:40:31] - [::1] - Videoconferencia ticket 2085622 deletada por André Cunha de Oliveira 
+[11:40:46] - [::1] - Videoconferencia ticket 2085622 deletada por André Cunha de Oliveira 
+[11:42:48] - [::1] - Videoconferencia ticket 280125 cadastrada  por [André Cunha de Oliveira] 
+[11:43:28] - [::1] - Videoconferencia ticket 280125  editadada  por [André Cunha de Oliveira] 
+[11:43:33] - [::1] - Videoconferencia ticket 2085622 deletada por [André Cunha de Oliveira] 
+[16:11:47] - [::1] - Videoconferencia ticket 123456 cadastrada  por [André Cunha de Oliveira] 
