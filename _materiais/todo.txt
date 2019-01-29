@@ -1,1 +1,0 @@
--> Se o usuário estiver como status BLOQUEADO, ele não permite fazer o login no sistema.
