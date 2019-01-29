@@ -1,0 +1,17 @@
+img { border-style: none; padding: 10px; }
+
+.dropdown-content li>a {
+    font-size: 16px;
+    color: #fff;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
+
+.dropdown-content li>span {
+    font-size: 16px;
+    color: #000;
+    display: block;
+    line-height: 22px;
+    padding: 14px 16px;
+}
