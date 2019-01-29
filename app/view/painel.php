@@ -30,7 +30,6 @@
     $dados = mysqli_fetch_array($resultado);
     $usuarioUnidade = $dados['unidade'];
 
-
     // leitura das datas automaticamente
     $dia = date('d');
     $mes = date('m');
@@ -39,21 +38,19 @@
     //$cidade = "Digite aqui sua cidade";
 
     // configuração mes 
-
     switch ($mes){
-
-    case 1: $mes = "01"; break;
-    case 2: $mes = "02"; break;
-    case 3: $mes = "03"; break;
-    case 4: $mes = "04"; break;
-    case 5: $mes = "05"; break;
-    case 6: $mes = "06"; break;
-    case 7: $mes = "07"; break;
-    case 8: $mes = "08"; break;
-    case 9: $mes = "09"; break;
-    case 10: $mes = "10"; break;
-    case 11: $mes = "11"; break;
-    case 12: $mes = "12"; break;
+        case 1: $mes = "01"; break;
+        case 2: $mes = "02"; break;
+        case 3: $mes = "03"; break;
+        case 4: $mes = "04"; break;
+        case 5: $mes = "05"; break;
+        case 6: $mes = "06"; break;
+        case 7: $mes = "07"; break;
+        case 8: $mes = "08"; break;
+        case 9: $mes = "09"; break;
+        case 10: $mes = "10"; break;
+        case 11: $mes = "11"; break;
+        case 12: $mes = "12"; break;
 
     }
 
@@ -61,19 +58,14 @@
     // configuração semana 
 
     switch ($semana) {
-
-    case 0: $semana = "DOM"; break;
-    case 1: $semana = "SEG"; break;
-    case 2: $semana = "TER"; break;
-    case 3: $semana = "QUA"; break;
-    case 4: $semana = "QUI"; break;
-    case 5: $semana = "SEX"; break;
-    case 6: $semana = "SAB"; break;
-
+        case 0: $semana = "DOM"; break;
+        case 1: $semana = "SEG"; break;
+        case 2: $semana = "TER"; break;
+        case 3: $semana = "QUA"; break;
+        case 4: $semana = "QUI"; break;
+        case 5: $semana = "SEX"; break;
+        case 6: $semana = "SAB"; break;
     }
-    //Agora basta imprimir na tela...
-    //echo ("$semana | $dia/$mes");
-    
 
 ?>
     <script>
