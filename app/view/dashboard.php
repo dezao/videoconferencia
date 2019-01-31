@@ -167,9 +167,9 @@
                            
                            $dataDoDia = date("Y/m/d");
                            if ($dados['adm'] != 1) {
-                               $sqlVideo = "SELECT * FROM videoconferencias WHERE dia >= '$dataDoDia' AND excluido = 0  AND salasFisicas LIKE '%$usuarioUnidade%' ORDER BY dia, horainicio";
+                               $sqlVideo = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' AND excluido = 0  AND salasFisicas LIKE '%$usuarioUnidade%' ORDER BY dia, horainicio";
                             } else {
-                              $sqlVideo = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' AND excluido = 0 ORDER BY dia, horaInicio";
+                              $sqlVideo = "SELECT * FROM videoconferencias WHERE dia >= '$dataDoDia' AND excluido = 0 ORDER BY dia, horaInicio";
                             }
                            //$sqlVideo = "SELECT * FROM videoconferencias WHERE dia >= '$dataDoDia' AND excluido = 0  AND salasFisicas LIKE '%$usuarioUnidade%' ORDER BY dia, horainicio";
                            //$sqlVideo = "SELECT * FROM videoconferencias WHERE dia >= '$dataDoDia' AND excluido = 0  ORDER BY dia, horaInicio";
