@@ -1,7 +1,7 @@
 <?php
 
     //Topo e requisições
-    require_once '../../app/inc/topo.php';
+    include_once '../../app/inc/topo.php';
 
     // Matriz com todos os analistas
     //$participantes = array("André", "Fabio", "Gabriel", "Mariane", "Murilo");

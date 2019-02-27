@@ -15,3 +15,16 @@ img { border-style: none; padding: 10px; }
     line-height: 22px;
     padding: 14px 16px;
 }
+
+/* Datatable */
+table.dataTable.no-footer {
+    border-bottom: 20px solid transparent !important;
+}
+.dataTables_wrapper .dataTables_filter input {
+    margin-left: 0 !important;
+}
+.dataTables_wrapper .dataTables_filter {
+    float: right !important;
+    text-align: left !important;
+    width: 300px;
+}

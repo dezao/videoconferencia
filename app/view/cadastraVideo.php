@@ -40,11 +40,6 @@ include_once '../../app/inc/topo.php';
                         <input type="time" name="fim" id="fim" required>
                         <label for="fim">Fim</label>
                     </div>
-                    
-<!--                    <div class="input-field col s12">
-                        <input type="text" name="unidadesParticipantes" id="unidadesParticipantes" required>
-                        <label for="unidadesParticipantes">Unidades</label>
-                    </div>-->
 
                     <div class="input-field col s12">
                         <input type="text" name="salasFisicas" id="salasFisicas" required>
@@ -55,11 +50,6 @@ include_once '../../app/inc/topo.php';
                         <input type="number" name="pin" id="pin" required>
                         <label for="pin">PIN</label>
                     </div>
-
-<!--                    <div class="input-field col s12">
-                        <input type="text" id="analistaResponsavel" name="analistaResponsavel" required>
-                        <label for="analistaResponsavel">Analista Responsável</label>
-                    </div>-->
 
                     <button type="submit" name="btnCadastrar" class="btn green waves-effect waves-light">Cadastrar</button>
                     <a href="dashboard.php" class="btn red waves-effect waves-light">Cancelar</a>

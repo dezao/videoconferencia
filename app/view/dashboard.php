@@ -92,7 +92,6 @@
                                     </div>
                             </div>        
                         </article>  
-
                      <!--Videoconferências do Dia-->
                         <article class="col s12 l6 xl4">
                             <div class="card blue">
@@ -113,7 +112,6 @@
                                 </div>
                             </div>        
                         </article>
-                        
                         <!--Videoconferências de amanhã-->
                         <article class="col s12 l6 xl4">
                             <div class="card green">
@@ -134,20 +132,9 @@
                                 </div>
                             </div>        
                         </article>
-
                     </section>
-                <table class="striped responsive-table centered resultado">
-                    <?php 
-//                         if ($dados['adm'] == 0) {
-//                             
-//                         } else {
-//                            <form method="POST" id="formPesquisa" action="">
-//                                <div class="input-field col s2 offset-s10">
-//                                    <input type="text" id="pesquisa" name="pesquisa" placeholder="Busca de Videoconferências...">
-//                                </div>
-//                            </form>
-                    
-//                    } ?>
+                <!-- <table id="dashboard" class="mdl-data-table" style="width:100%"> -->
+                <table id="dashboard" class="striped responsive-table centered resultado mdl-data-table"  style="width:100%">
                     <thead>
                         <tr>
                             <th hidden>ID</th>
@@ -155,11 +142,9 @@
                             <th>DATA</th>
                             <th>INICIO</th>
                             <th>FIM</th>
-<!--                            <th>UNIDADES</th>-->
                             <th>PIN</th>
                             <th>SALAS FÍSICAS</th>
-<!--                            <th>OWNER</th>-->
-                            <th colspan="2">AÇÕES</th>
+                            <th>AÇÕES</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -186,39 +171,37 @@
                                         case 'NÃO' : $cor = '';  $corFonte = '' ; break;
                                     }
                         ?>
-                        <tr class="resultado" style='background-color:<?php echo $cor;?>; color:<?php echo $corFonte;?>'>
-                                
-                                <td hidden ><?php echo $dadosVideo['id']; ?></td>
-                                <td><?php echo $dadosVideo['ticket']; ?></td>
-                                    <?php $dia = $dadosVideo['dia']; 
-                                        $dia = date('d/m/Y', strtotime($dia));
-                                    ?>
-                                <td><?php echo $dia ?></td>
-                                <td><?php echo $dadosVideo['horaInicio']; ?></td>
-                                <td><?php echo $dadosVideo['horaFim']; ?></td>
-<!--                                <td><?php /*echo $dadosVideo['salasFisicas'];*/ ?></td>-->
-                                <td><b><?php echo $dadosVideo['pin']; ?></b></td>
-                                <td><?php echo $dadosVideo['salasFisicas']; ?></td>
-                                <td><?php /*echo $dadosVideo['analistaResponsavel'];*/ ?></td>
-                                
-                                <td><a href="editaVideo.php?id=<?php echo $dadosVideo['id']; ?>" class="btn-floating orange waves-effect waves-light"><i class="material-icons">edit</i></a>
-                                <a href="#modal<?php echo $dadosVideo['id']; ?>" class="btn-floating red modal-trigger waves-effect waves-light"><i class="material-icons">delete</i></a></td>
+                        <tr class="resultado" style='background-color:<?php echo $cor;?>; color:<?php echo $corFonte;?>'>                                
+                            <td hidden ><?php echo $dadosVideo['id']; ?></td>
+                            <td><?php echo $dadosVideo['ticket']; ?></td>
+                                <?php $dia = $dadosVideo['dia']; 
+                                    $dia = date('d/m/Y', strtotime($dia));
+                                ?>
+                            <td><?php echo $dia ?></td>
+                            <td><?php echo $dadosVideo['horaInicio']; ?></td>
+                            <td><?php echo $dadosVideo['horaFim']; ?></td>
+                            <td><b><?php echo $dadosVideo['pin']; ?></b></td>
+                            <td><?php echo $dadosVideo['salasFisicas']; ?></td>
+                            <td>
+                                <a href="editaVideo.php?id=<?php echo $dadosVideo['id']; ?>" class="btn-floating orange waves-effect waves-light"><i class="material-icons">edit</i></a>
+                                <a href="#modal<?php echo $dadosVideo['id']; ?>" class="btn-floating red modal-trigger waves-effect waves-light"><i class="material-icons">delete</i></a>
+                            </td>
 
-                                <!-- Estrutura Modal para exclusão -->
-                                <div id="modal<?php echo $dadosVideo['id']; ?>" class="modal">
-                                    <div class="modal-content">
-                                        <h4>Atenção!</h4>
-                                        <p>Tem certeza que deseja excluir esse registro?</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <form action="deletaVideo.php" method="POST">
-                                            <input type="hidden" name="id" value="<?php echo $dadosVideo['id']; ?>">
-                                            <button type="submit" name="btnDeletar" class="btn red">SIM</button>
-                                        </form>
-                                        <a href="#!" class="modal-close waves-effect waves-green green white-text btn-flat">NÃO</a>
-                                    </div>
+                            <!-- Estrutura Modal para exclusão -->
+                            <div id="modal<?php echo $dadosVideo['id']; ?>" class="modal">
+                                <div class="modal-content">
+                                    <h4>Atenção!</h4>
+                                    <p>Tem certeza que deseja excluir esse registro?</p>
                                 </div>
-                            </tr>
+                                <div class="modal-footer">
+                                    <form action="deletaVideo.php" method="POST">
+                                        <input type="hidden" name="id" value="<?php echo $dadosVideo['id']; ?>">
+                                        <button type="submit" name="btnDeletar" class="btn red">SIM</button>
+                                    </form>
+                                    <a href="#!" class="modal-close waves-effect waves-green green white-text btn-flat">NÃO</a>
+                                </div>
+                            </div>
+                        </tr>
                         <?php 
                         }  
                             } else { ?>
@@ -230,7 +213,6 @@
                     </tbody>
                 </table>
                 <br>
-                 
             </div>
         </div>
 

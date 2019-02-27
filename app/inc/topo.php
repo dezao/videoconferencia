@@ -1,12 +1,13 @@
 <?php
+  //Sessão
+  session_start();
+  ob_start();
+
   //Definindo timezone do projeto
   date_default_timezone_set("America/Sao_Paulo");
   
   //Definindo Data atual
   $dataDoDia = date('Y/m/d');
-
-  //Sessão
-  session_start();
 
   //Conexão com o Banco de Dados
   include_once 'dbconnect.php';
@@ -47,6 +48,10 @@
     <link rel="stylesheet" href="../../assets/css/materialize.min.css">
     <!--Custom CSS-->
     <link rel="stylesheet" href="../../assets/css/custom.css">
+    <!-- Data Tables-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/datatables.min.css"/>
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css"/> -->
     <!--Favicon-->
     <link rel="icon" type="image/png" sizes="32x32" href="../../assets/img/favicon.png">
     <title>Painel de Videoconferência</title>
@@ -55,11 +60,10 @@
 <body>
   <div class="col s6 right-align #880e4f pink darken-2 white-text"><b style="font-size: .70em; margin-right: 20px;">BEM VINDO <?php  echo  strtoupper($dados['nome']) . '!';  ?></b></div>
   </div>
-  
   <!--Estrutura Dropdown Menu Analistas NavBar -->
   <ul id="analistas" class="dropdown-content #880e4f pink darken-4">
-  <li><a href="../../app/view/cadastraAnalista.php"><i class="material-icons left white-text">people</i>CADASTRAR</a></li>
-  <li><a href="./listaAnalista.php"><i class="material-icons left white-text">filter_list</i>LISTAR</a></li>
+    <li><a href="../../app/view/cadastraAnalista.php"><i class="material-icons left white-text">people</i>CADASTRAR</a></li>
+    <li><a href="./listaAnalista.php"><i class="material-icons left white-text">filter_list</i>LISTAR</a></li>
   </ul>
 
   <!--Estrutura Dropdown Menu Videoconferências NavBar -->
