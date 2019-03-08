@@ -135,6 +135,8 @@
                     </section>
                 <!-- <table id="dashboard" class="mdl-data-table" style="width:100%"> -->
                 <table id="dashboard" class="striped responsive-table centered resultado mdl-data-table"  style="width:100%">
+                <!-- <table id="dashboard" class="ui celled table" style="width:100%"> -->
+                
                     <thead>
                         <tr>
                             <th hidden>ID</th>
