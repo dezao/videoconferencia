@@ -28,3 +28,8 @@ table.dataTable.no-footer {
     text-align: left !important;
     width: 300px;
 }
+
+table.dataTable thead th, table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 0px solid #111 !important;
+}

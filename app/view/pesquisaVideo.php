@@ -26,7 +26,7 @@
                         <?php
                            
                            $dataDoDia = date("Y/m/d");
-                           $sqlVideo = "SELECT * FROM videoconferencias WHERE salasFisicas LIKE '%$usuarioUnidade%' AND excluido = 0 ORDER BY dia, horainicio";
+                           $sqlVideo = "SELECT * FROM videoconferencias WHERE excluido = 0 ORDER BY dia, horainicio";
                         //    if ($dados['adm'] != 1) {
                         //        $sqlVideo = "SELECT * FROM videoconferencias WHERE dia = '$dataDoDia' AND excluido = 0  AND salasFisicas LIKE '%$usuarioUnidade%' ORDER BY dia, horainicio";
                         //     } else {
