@@ -181,9 +181,9 @@
 </div>
 
     <script type="text/javascript">
-        // setTimeout(function() {
-        // $('#alertaVideo').fadeOut('fast');
-        // }, 10000);
+        setTimeout(function() {
+        $('#alertaVideo').fadeOut('fast');
+        }, 10000);
 	</script>
 
 <?php
