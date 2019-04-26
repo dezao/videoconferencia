@@ -1,11 +1,6 @@
 <?php
     //Cabeçalho
     include_once  '../../app/inc/topo.php';
-
-    if ($usuarioAdm != 1) {
-        echo "<h3 align='center'>VOCÊ NÃO TEM PERMISSÃO PARA ACESSA ESTA PÁGINA!</h3>";
-    } else {
-
 ?>
 <div class="row">
     <div class="col s12 m12">
@@ -95,7 +90,6 @@
 </div>
 
 <?php
-    }
     //Rodapé
     include_once '../../app/inc/rodape.php';
 ?>

@@ -1,0 +1,2 @@
+[08:31:37] - [::1] - Analista teste - TESTE cadastrado por [Andre Oliveira] 
+[08:33:41] - [::1] - Videoconferencia ticket 1597423101 cadastrada  por [Fabio] 

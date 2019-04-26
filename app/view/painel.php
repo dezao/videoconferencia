@@ -108,9 +108,9 @@
 <div class="row">
     <div class="card-panel #880e4f pink darken-4 white-text col s12 m12">
         <br>
-        <div class="col s12 m4 l2 left-align"><h4><?php echo ("$semana | $dia/$mes"); ?></h4></div>
-        <div class="col s12 m4 l8 center-align"><img src="../../assets/img/logo_raizen.png"><h5>PAINEL DE VIDEOCONFERÊNCIAS<br></h5></div>
-        <h3><div class=" col s12 m4 l2 right-align" id="relogio"></div></h3>
+        <div class="col s12 m4 l3 left-align"><h4><?php echo ("$semana | $dia/$mes"); ?></h4></div>
+        <div class="col s12 m4 l6 center-align"><img src="../../assets/img/logo_raizen.png"><h5>PAINEL DE VIDEOCONFERÊNCIAS<br></h5></div>
+        <h3><div class=" col s12 m4 l3 right-align" id="relogio"></div></h3>
         <div class="row"></div>
     </div>
            
