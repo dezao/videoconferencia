@@ -73,7 +73,9 @@ $(document).ready(function(){
             }
         }
     });
+    $('.collapsible').collapsible();
 });
+
  //Autocomplete analistas
 //    $('input.autocomplete').autocomplete({
 //        data: {
