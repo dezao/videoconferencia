@@ -14,7 +14,7 @@
         $sql = "INSERT INTO usuarios (adm, ativo, nome, unidade, login, senha) VALUES ('$adm', '$ativo','$nome', '$unidade', '$login', '$senha')";
 
         if(mysqli_query($connect, $sql)) {
-            $_SESSION['mensagem'] = 'Analista cadastrado com Suceso!';
+            $_SESSION['mensagem'] = 'Analista cadastrado com sucesso!';
             header('Location: ./../view/listaAnalista.php');
             Logger("Analista " . $login .' - '.$nome . " cadastrado por " .'['. $usuarioLogado.']');
         } else {

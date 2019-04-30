@@ -3,7 +3,15 @@
     if (isset($_SESSION['mensagem'])) { ?>
         <script>
         window.onload = function () {
-            M.toast({html: '<?php echo $_SESSION['mensagem'];?>'})
+            Swal.fire({
+            type: 'success',
+            title: 'Sucesso!',
+            //footer: '<hr>',
+            text: '<?php echo $_SESSION['mensagem'];?>',
+            showConfirmButton: false,
+            timer: 3000
+            })
+            //M.toast({html: '<?php /*echo $_SESSION['mensagem'];*/?>'})
         } 
         </script>
         

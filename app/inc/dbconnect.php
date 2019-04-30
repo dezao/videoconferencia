@@ -3,7 +3,7 @@
     //Conexão com o Banco de Dados
     $servidor = 'localhost';
     $usuario = 'root';
-    $senha = '';
+    $senha = 'dEzao@123';
     $banco = 'videoconferencia';
 
     $connect = mysqli_connect($servidor, $usuario, $senha, $banco);

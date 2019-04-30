@@ -18,7 +18,7 @@
         //$sql = "UPDATE FROM videoconferencias "
 
         if(mysqli_query($connect, $sql)) {
-            $_SESSION['mensagem'] = 'Videoconferência deletada com Suceso!';
+            $_SESSION['mensagem'] = 'Videoconferência deletada com sucesso!';
             Logger("Videoconferencia ticket " . $ticket . " deletada por [" . $usuarioLogado . "]");
             header('Location: dashboard.php');
         } else {

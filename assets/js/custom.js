@@ -76,17 +76,8 @@ $(document).ready(function(){
     $('.collapsible').collapsible();
 });
 
- //Autocomplete analistas
-//    $('input.autocomplete').autocomplete({
-//        data: {
-//            "André": null,
-//            "Fabio": null,
-//            "Gabriel": null,
-//            "Mariane": null,
-//            "Murilo": null
-//        },
-//        });
-//        
+
+
 
 //Função responsável por validar se já existe uma videoconferência já cadastrada antes de continuar o cadastro
     function valTicket() {
@@ -108,7 +99,13 @@ $(document).ready(function(){
             //E atribui a mensagem de erro ao seletor "msg".
             if(retorna){
                 //console.log(ticket);
-                alert('Videoconferência já cadastrada, verifique!');
+                Swal.fire({
+                    type: 'error',
+                    title: 'Oops...',
+                    text: 'Videoconferência já cadastrada, verifique!',
+                    //footer: '<a href>Why do I have this issue?</a>'
+                  })
+                //alert('Videoconferência já cadastrada, verifique!');
                 //$("#msg").html('<div align="center" id="erroLogin" class="card-panel red lighten-4 red-text text-darken-4">O campo login/senha precisam ser preenchidos!</div><br>');
             }else{
 //                console.log('Cadastrar');

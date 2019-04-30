@@ -17,14 +17,27 @@
         $dia = mysqli_escape_string($connect, $_POST['dia']);
         $inicio = mysqli_escape_string($connect, $_POST['inicio']);
         $fim = mysqli_escape_string($connect, $_POST['fim']);
-//        $unidades = mysqli_escape_string($connect, $_POST['unidadesParticipantes']);
         $salasFisicas = mysqli_escape_string($connect, $_POST['salasFisicas']);
+        
+ /*        $salaCWB = $_POST['cwb'];
+        $salaCAR = $_POST['car'];
+        $salaFL =  $_POST['fl'];
+        $salaCOMGAs = $_POST['comgas'];
+        $salaFIGUEIRA = $_POST['figueira'];
+        $salaARA = $_POST['ara'];
+        $salaTRO =  $_POST['tro'];
+        $salaSAN_TER = $_POST['san_ter'];
+        $salaSAN_PORTO = $_POST['san_porto'];
+        $salaOutros = $_POST['outros'].'  ';
+        
+        $salasFisicas = substr($salaCWB.$salaCAR.$salaFL.$salaCOMGAs.$salaFIGUEIRA.$salaARA.$salaTRO.$salaSAN_TER.$salaSAN_PORTO.$salaOutros, 0, -2);
+         */
+
         $pin = mysqli_escape_string($connect, $_POST['pin']);
-        //$analistaResponsavel = $sorteado;
-        //$analistaResponsavel = mysqli_escape_string($connect, $_POST['analistaResponsavel']);
   
         //$sql = "INSERT INTO videoconferencias (vip, ticket, dia, horaInicio, horaFim, unidadesParticipantes, salasFisicas, pin, analistaResponsavel) VALUES ('$vip', '$ticket', '$dia', '$inicio', '$fim', '$unidades', '$salasFisicas', '$pin', '$analistaResponsavel')";
         //$sql = "INSERT INTO videoconferencias (vip, ticket, dia, horaInicio, horaFim, salasFisicas, pin, analistaResponsavel) VALUES ('$vip', '$ticket', '$dia', '$inicio', '$fim', '$salasFisicas', '$pin', '$analistaResponsavel')";
+
         $sql = "INSERT INTO videoconferencias (vip, ticket, dia, horaInicio, horaFim, salasFisicas, pin) VALUES ('$vip', '$ticket', '$dia', '$inicio', '$fim', '$salasFisicas', '$pin')";
         
         //Dados Vídeo
@@ -44,7 +57,7 @@
                     window.history.go(-1)
                    </script>";
         }else if(mysqli_query($connect, $sql)) {
-            $_SESSION['mensagem'] = 'Videoconferência cadastrada com Suceso!';
+            $_SESSION['mensagem'] = 'Videoconferência cadastrada com sucesso!';
             Logger("Videoconferencia ticket " . $ticket . " cadastrada  por [" . $usuarioLogado."]");
             header('Location: ../../app/view/dashboard.php');
         } else {
