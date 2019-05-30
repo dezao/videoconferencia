@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).ready(function() {
     //Botão menu
     $('.sidenav').sidenav();
     //Slider
@@ -101,9 +101,8 @@ $(document).ready(function(){
                 //console.log(ticket);
                 Swal.fire({
                     type: 'error',
-                    title: 'Oops...',
-                    text: 'Videoconferência já cadastrada, verifique!',
-                    //footer: '<a href>Why do I have this issue?</a>'
+                    title: 'ATENÇÃO!',
+                    text: 'Videoconferência já cadastrada no sistema, verifique!',    
                   })
                 //alert('Videoconferência já cadastrada, verifique!');
                 //$("#msg").html('<div align="center" id="erroLogin" class="card-panel red lighten-4 red-text text-darken-4">O campo login/senha precisam ser preenchidos!</div><br>');
